@@ -1,2 +1,1 @@
-/* Your JS here. */
-console.log('Hello World!')
+// main.js — additional scripts entry point

@@ -19,44 +19,61 @@
   <!-- Sticky / Resizing Navbar with Position Indicator -->
   <header id="top" class="site-header">
     <nav class="nav" id="navbar">
-      <a class="logo" href="#top">MG</a>
+      <a class="logo" href="#top">Malhar Ravindra Gudekar</a>
+      <!-- NAV: simplify -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" data-section="hero">Home</a></li>
         <li><a href="#about" data-section="about">About</a></li>
-        <li><a href="#work" data-section="work">Work</a></li>
-        <li><a href="#gallery" data-section="gallery">Gallery</a></li>
-        <li><a href="#video" data-section="video">Video</a></li>
+        <li><a href="#experience" data-section="experience">Experience</a></li>
+        <li><a href="#projects" data-section="projects">Projects</a></li>
         <li><a href="#contact" data-section="contact">Contact</a></li>
+        
       </ul>
+
       <!-- position indicator bar -->
       <div class="reading-indicator" id="readingIndicator"></div>
     </nav>
   </header>
 
-  <!-- Stripe: Hero (fixed background, vertical centering) -->
+  <!-- HERO: change CTAs -->
   <section id="hero" class="stripe hero has-fixed-bg" aria-label="Intro">
     <div class="hero__content">
       <h1 class="hero__title">Hi, I’m Malhar.</h1>
-      <p class="hero__subtitle">Data · AI · Product. I build secure, human-centered systems.</p>
+      <p class="hero__subtitle">
+        I design and ship end-to-end data and AI systems spanning analytics, forecasting, NLP, and production ML—
+        across healthcare, finance, and secure digital platforms.
+      </p>
       <div class="hero__cta">
-        <a class="btn" href="#work">View Work</a>
-        <button class="btn btn-outline" id="openAboutModal">Quick Bio</button>
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn btn-outline" href="./assets/Malhar Gudekar Resume (1).pdf" target="_blank" rel="noopener">
+          Resume
+        </a>
+        <!-- optional third -->
+        <button class="btn btn-ghost" id="openAboutModal">Quick Bio</button>
       </div>
     </div>
   </section>
+
 
   <!-- Modal (About quick bio) -->
   <div class="modal" id="aboutModal" aria-hidden="true" role="dialog" aria-labelledby="aboutTitle">
     <div class="modal__backdrop" data-close></div>
     <div class="modal__dialog" role="document">
       <button class="modal__close" aria-label="Close" data-close>&times;</button>
-      <h2 id="aboutTitle">About Me (Quick)</h2>
-      <p>I’m a MSIM student at UIUC focused on data engineering, security, and AI-powered products.</p>
-      <p>Recent: Developer Productivity @ Synchrony, CHI Research Assistant (misinfo detection), SeeMe (GenAI art marketplace).</p>
+      <h2 id="aboutTitle">About Me</h2>
+      <p>Master of Science in Information Management @ UIUC | Applied Data Scientist & ML Engineer</p>
+      <p>Bachelor of Engineering in Computer Science @ Mumbai University</p>
+      <p>I build end-to-end data and machine learning systems, from analytics and forecasting to production ML and RAG pipelines. My work spans healthcare, finance, and security, including real-time misinformation detection, AI-powered retrieval systems, and predictive credit risk modeling.</p>
+      <p>Experience across:</p>
+      <p>• Healthcare AI & misinformation detection</p>
+      <p>• Data engineering & analytics platforms</p>
+      <p>• Secure, AI-powered product development</p>
+      <p>Experienced with Python, SQL, ML/NLP, FastAPI, Kafka, Docker, and AWS. Currently seeking full-time roles in Data Science, Machine Learning, or Analytics Engineering.</p>
     </div>
   </div>
 
   <!-- Stripe: About (multi-column layout) -->
+  <!-- ABOUT: remove “student-first” framing -->
   <section id="about" class="stripe about">
     <div class="container columns">
       <div class="col">
@@ -64,101 +81,449 @@
       </div>
       <div class="col">
         <h2>About</h2>
-        <p>I design and ship data/AI features with measurable impact. Interests: trustworthy AI, secure pipelines, clean UX.</p>
+        <p>
+          I build and deploy data, ML, and AI systems with real-world impact across healthcare, finance, and secure platforms.
+        </p>
         <ul class="badges">
-          <li><i class="fa-solid fa-shield"></i> BASILISK Security Hub</li>
-          <li><i class="fa-solid fa-database"></i> AWS + Spark + ETL</li>
-          <li><i class="fa-solid fa-wand-magic-sparkles"></i> GenAI UX</li>
+          <li><i class="fa-solid fa-wand-magic-sparkles"></i> Real-time ML pipelines (Kafka, Neo4j, AWS EKS)</li>
+          <li><i class="fa-solid fa-database"></i> Production RAG systems (FastAPI, PostgreSQL, pgVector)</li>
+          <li><i class="fa-solid fa-shield"></i> Secure, data-driven products across research and industry</li>
         </ul>
       </div>
     </div>
   </section>
 
+
   <!-- Stripe: Work (cards) -->
-  <section id="work" class="stripe work">
+  <!-- EXPERIENCE: rename from work + split UIUC into two cards -->
+  <section id="experience" class="stripe work">
     <div class="container">
-      <h2>Selected Work</h2>
+      <h2>Experience</h2>
+
+      <!-- Core Technical Experience -->
+      <h3 class="subhead">Core Technical Experience</h3>
       <div class="cards">
+
         <article class="card">
-          <h3>CHI – Infodemic AI</h3>
-          <p>Kafka → Neo4j → EKS pipeline for real-time health misinfo detection.</p>
-          <button class="link-as-btn" data-open="#details-chi">Details</button>
+          <h3>UIUC — Research Assistant (Finance & Health)</h3>
+          <p>mHealth platform integrating wearable data + conversational AI for personalized coaching.</p>
+          <button class="link-as-btn" data-open="#details-uiuc-mhealth">Details</button>
         </article>
+
         <article class="card">
-          <h3>SeeMe – Collections</h3>
-          <p>Next.js feature set: collections, AI descriptions, Pinecone embeddings.</p>
-          <button class="link-as-btn" data-open="#details-seeme">Details</button>
+          <h3>UIUC — Research Assistant (CHI: Infodemic AI)</h3>
+          <p>Real-time NLP + streaming pipelines for large-scale health misinformation detection.</p>
+          <button class="link-as-btn" data-open="#details-uiuc-chi">Details</button>
         </article>
+
         <article class="card">
-          <h3>BASILISK – Security Hub</h3>
-          <p>Hybrid crypto tooling for integrity, auth, and non-repudiation.</p>
-          <button class="link-as-btn" data-open="#details-basilisk">Details</button>
+          <h3>Business Intelligence Group — Technical Consultant</h3>
+          <p>Production RAG pipeline for automated payer rule extraction + policy retrieval.</p>
+          <button class="link-as-btn" data-open="#details-big">Details</button>
         </article>
+
+        <article class="card">
+          <h3>Stu/Dio at Illinois — Project Manager</h3>
+          <p>Cross-functional delivery for a consumer app; shipped fast iterations with user feedback loops.</p>
+          <button class="link-as-btn" data-open="#details-studio">Details</button>
+        </article>
+
+        <article class="card">
+          <h3>Swift Mobil — Data Analyst</h3>
+          <p>Python data pipelines + graph analysis + Power BI dashboards for operational decision support.</p>
+          <button class="link-as-btn" data-open="#details-swift">Details</button>
+        </article>
+
+        <article class="card">
+          <h3>Pscope Technologies — Data Analyst</h3>
+          <p>Automated reporting + built Power BI dashboards for cross-functional KPI tracking.</p>
+          <button class="link-as-btn" data-open="#details-pscope">Details</button>
+        </article>
+      </div>
+
+      <!-- Divider -->
+      <div class="section-divider" aria-hidden="true"></div>
+
+      <!-- Leadership & Campus Roles -->
+      <h3 class="subhead">Leadership & Campus Roles</h3>
+      <div class="cards">
+
+        <article class="card">
+          <h3>UIUC Career Center — Student Career Navigator</h3>
+          <p>Built career resources + mentored peers; improved engagement and job-search confidence.</p>
+          <button class="link-as-btn" data-open="#details-career-nav">Details</button>
+        </article>
+
+        <article class="card">
+          <h3>University of Illinois System — Data Quality & Accessibility Assistant</h3>
+          <p>Improved document structure, metadata, and accessibility QA for compliance-ready records.</p>
+          <button class="link-as-btn" data-open="#details-accessibility">Details</button>
+        </article>
+
+        <article class="card">
+          <h3>National Service Scheme — Team Lead</h3>
+          <p>Led community initiatives and field programs focused on social welfare, outreach, and impact execution.</p>
+          <button class="link-as-btn" data-open="#details-nss">Details</button>
+        </article>
+
       </div>
     </div>
 
-    <!-- Hidden modals per project -->
-    <div class="modal" id="details-chi" aria-hidden="true" role="dialog">
+    <!-- =========================
+     EXPERIENCE MODALS (REWRITTEN)
+     ========================= -->
+
+    <!-- Stu/Dio -->
+    <div class="modal" id="details-studio" aria-hidden="true" role="dialog" aria-labelledby="studioTitle">
       <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog">
+      <div class="modal__dialog" role="document">
         <button class="modal__close" aria-label="Close" data-close>&times;</button>
-        <h3>CHI – Infodemic AI</h3>
-        <p>NLP models on TikTok vaccine content; GDPR/WHO compliant deployment.</p>
+
+        <h3 id="studioTitle">Stu/Dio at Illinois — Project Manager</h3>
+        <p><strong>Aug 2025 – Present</strong> · Champaign, IL</p>
+
+        <p>
+          Led cross-functional delivery for <strong>DeepCover</strong>, coordinating engineering, design, and QA to ship iterative builds
+          and stakeholder-ready demos.
+        </p>
+
+        <ul>
+          <li>Drove <strong>25% user growth</strong> and improved app ratings to <strong>4.0 stars</strong> on both the App Store and Play Store through rapid iteration and feedback loops</li>
+          <li>Implemented <strong>Scrum/Kanban</strong> workflows with JIRA-based sprint planning, backlog prioritization, and release tracking</li>
+          <li>Streamlined QA cycles and milestone delivery to ensure <strong>on-time demos</strong> and production-ready builds</li>
+        </ul>
       </div>
     </div>
-    <div class="modal" id="details-seeme" aria-hidden="true" role="dialog">
+
+    <!-- Business Intelligence Group -->
+    <div class="modal" id="details-big" aria-hidden="true" role="dialog" aria-labelledby="bigTitle">
       <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog">
+      <div class="modal__dialog" role="document">
         <button class="modal__close" aria-label="Close" data-close>&times;</button>
-        <h3>SeeMe – Collections</h3>
-        <p>Slug routing, collection covers, server actions, Postgres, Pinecone.</p>
+
+        <h3 id="bigTitle">Business Intelligence Group — Technical Consultant</h3>
+        <p><strong>Aug 2025 – Dec 2025</strong> · Champaign, IL</p>
+
+        <p>
+          Built a production-oriented <strong>RAG pipeline</strong> to automate extraction and retrieval of payer/insurance billing rules
+          from healthcare PDFs and portals.
+        </p>
+
+        <ul>
+          <li>Developed <strong>Selenium-based crawlers</strong> to ingest unstructured policy documents and convert them into a structured, queryable knowledge base</li>
+          <li>Implemented <strong>FastAPI</strong> services with <strong>PostgreSQL + pgVector</strong> for semantic search and version-controlled policy retrieval</li>
+          <li>Reduced manual rule lookup time by <strong>60%</strong>, improving billing efficiency and policy compliance for healthcare teams</li>
+          <li>Delivered a scalable system aligned with real-world healthcare workflows and operational constraints</li>
+        </ul>
       </div>
     </div>
-    <div class="modal" id="details-basilisk" aria-hidden="true" role="dialog">
+
+    <!-- UIUC: Finance & Health (mHealth) -->
+    <div class="modal" id="details-uiuc-mhealth" aria-hidden="true" role="dialog" aria-labelledby="mhealthTitle">
       <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog">
+      <div class="modal__dialog" role="document">
         <button class="modal__close" aria-label="Close" data-close>&times;</button>
-        <h3>BASILISK – Security Hub</h3>
-        <p>Hybrid cryptography, automated keygen, perf-tuned Python pipelines.</p>
+
+        <h3 id="mhealthTitle">University of Illinois Urbana-Champaign — Research Assistant (Finance & Health)</h3>
+        <p><strong>May 2025 – Present</strong> · Champaign, IL</p>
+
+        <p>
+          Built and deployed a cross-platform <strong>mHealth application</strong> integrating wearable data and conversational AI to support
+          personalized coaching for older adults.
+        </p>
+
+        <ul>
+          <li>Developed a <strong>Flutter + Dart</strong> app enabling real-time activity tracking and personalized feedback for <strong>100+ users</strong></li>
+          <li>Designed a <strong>PostgreSQL</strong> schema for longitudinal activity, conversation history, and user profiles, improving query performance and context retrieval by <strong>40%</strong></li>
+          <li>Engineered an AI chatbot with <strong>RAG-based retrieval</strong> and <strong>history summarization</strong>, reducing multi-turn context loss by <strong>55%</strong></li>
+          <li>Shipped a reliable, user-centered system aligned with healthcare usability and data quality requirements</li>
+        </ul>
       </div>
     </div>
+
+    <!-- UIUC: CHI Infodemic AI -->
+    <div class="modal" id="details-uiuc-chi" aria-hidden="true" role="dialog" aria-labelledby="chiTitle">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close" data-close>&times;</button>
+
+        <h3 id="chiTitle">University of Illinois Urbana-Champaign — Research Assistant (CHI: Infodemic AI)</h3>
+        <p><strong>Jan 2025 – May 2025</strong> · Champaign, IL</p>
+
+        <p>
+          Designed and scaled real-time pipelines for detecting viral health misinformation across social platforms using streaming and graph-based modeling.
+        </p>
+
+        <ul>
+          <li>Integrated <strong>Apache Kafka</strong> and <strong>Neo4j Streams</strong> for high-throughput ingestion and relationship-aware analysis across TikTok and YouTube data</li>
+          <li>Built modular <strong>Python NLP</strong> pipelines and deployed on <strong>AWS EKS</strong> via Docker, reducing inference latency by <strong>40%+</strong></li>
+          <li>Developed scalable inference APIs and CI/CD workflows to ensure reproducible, reliable deployments</li>
+          <li>Supported <strong>WHO-aligned</strong> misinformation tracking with an emphasis on scalability and operational robustness</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Swift Mobil -->
+    <div class="modal" id="details-swift" aria-hidden="true" role="dialog" aria-labelledby="swiftTitle">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close" data-close>&times;</button>
+
+        <h3 id="swiftTitle">Swift Mobil Software Solutions Provider — Data Analyst</h3>
+        <p><strong>Jul 2023 – Oct 2023</strong> · Mumbai, IN</p>
+
+        <p>
+          Worked on ingestion, transformation, and analytics workflows to improve operational visibility and decision-making.
+        </p>
+
+        <ul>
+          <li>Processed large <strong>REST API datasets</strong> using <strong>Python (Pandas, NumPy)</strong> and prepared clean data stored in <strong>AWS S3</strong>, improving reporting accuracy by <strong>20%</strong></li>
+          <li>Used <strong>Neo4j</strong> and <strong>SQL</strong> analysis to detect patterns and anomalies, enabling <strong>30% faster</strong> root-cause analysis</li>
+          <li>Built and maintained <strong>Power BI dashboards</strong> for logistics and financial KPIs, reducing manual reporting time by <strong>40%</strong></li>
+          <li>Translated operational data into actionable insights through analytics and visualization</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pscope -->
+    <div class="modal" id="details-pscope" aria-hidden="true" role="dialog" aria-labelledby="pscopeTitle">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close" data-close>&times;</button>
+
+        <h3 id="pscopeTitle">Pscope Technologies Pvt. Ltd. — Data Analyst</h3>
+        <p><strong>Jan 2023 – Jun 2023</strong> · Mumbai, IN</p>
+
+        <p>
+          Built analytics automation and dashboards to support performance tracking across Sales, Finance, and Operations.
+        </p>
+
+        <ul>
+          <li>Automated Excel reporting workflows with <strong>VBA</strong>, reducing report preparation time by <strong>30%</strong></li>
+          <li>Designed and maintained <strong>20+ Power BI dashboards</strong> using <strong>SQL + DAX</strong> for cross-functional performance reporting</li>
+          <li>Consolidated and validated <strong>CRM/ERP</strong> datasets to improve accuracy and data consistency</li>
+          <li>Collaborated in Agile sprints using <strong>Jira</strong> to deliver iterative, stakeholder-driven analytics improvements</li>
+        </ul>
+      </div>
+    </div>
+    
+  <div class="modal" id="details-career-nav" aria-hidden="true" role="dialog" aria-labelledby="careerNavTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" aria-label="Close" data-close>&times;</button>
+
+      <h3 id="careerNavTitle">Student Career Navigator — UIUC Career Center</h3>
+      <p><strong>Aug 2025 – Present</strong> · Champaign, IL · On-site</p>
+
+      <p>
+        Supported the UIUC Career Center by designing data-informed career resources, mentoring students,
+        and delivering workshops to improve job-readiness and engagement outcomes.
+      </p>
+
+      <ul>
+        <li>Designed and refined career resources, increasing student engagement by <strong>27%</strong> and improving accessibility for international students</li>
+        <li>Mentored <strong>10+ students</strong> on career strategy, resume positioning, and networking, improving job-search confidence by <strong>35%</strong></li>
+        <li>Led workshops on industry networking and recruitment preparation, translating best practices into actionable guidance</li>
+        <li>Analyzed <strong>17,000+ student records</strong> for the Illinois Success Report to identify academic and engagement trends, enabling data-driven improvements in student services</li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="modal" id="details-accessibility" aria-hidden="true" role="dialog" aria-labelledby="accessibilityTitle">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close" data-close>&times;</button>
+
+        <h3 id="accessibilityTitle">Data Quality & Accessibility Assistant — University of Illinois System</h3>
+        <p><strong>Jun 2025 – Present</strong> · Champaign, IL · Remote</p>
+
+        <p>
+          Focused on improving data quality, accessibility compliance, and documentation standards
+          across institutional records and reporting systems.
+        </p>
+
+        <ul>
+          <li>Standardized <strong>50+ documents</strong> by improving structure, metadata, and tagging using <strong>Adobe Acrobat Pro DC</strong></li>
+          <li>Validated screen-reader compatibility through manual QA checks, contributing to improved accessibility compliance</li>
+          <li>Identified and documented layout and tagging inconsistencies to improve cross-document consistency</li>
+          <li>Collaborated using a centralized QA tracker to capture key accessibility KPIs and improve overall data quality processes</li>
+        </ul>
+      </div>
+    </div>
+    
+
+
+    <div class="modal" id="details-nss" aria-hidden="true" role="dialog" aria-labelledby="nssTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" aria-label="Close" data-close>&times;</button>
+
+      <h3 id="nssTitle">National Service Scheme — Team Lead</h3>
+      <p><strong>Jun 2020 – Jun 2022</strong> · India</p>
+
+      <p>
+        Led community-focused programs aimed at improving social welfare through structured planning,
+        on-ground execution, and volunteer coordination.
+      </p>
+
+      <ul>
+        <li>Organized and managed initiatives including <strong>food donation drives</strong>, <strong>child welfare programs</strong>, and <strong>environmental clean-up campaigns</strong></li>
+        <li>Led <strong>week-long rural outreach camps</strong>, conducting surveys to identify local challenges and translating findings into actionable interventions</li>
+        <li>Coordinated volunteers and logistics to ensure timely execution and community participation</li>
+        <li>Raised awareness around public health, education, and sustainability to support long-term community well-being</li>
+      </ul>
+    </div>
+  </div>
+
   </section>
 
-  <!-- Stripe: Gallery (Carousel) -->
-  <section id="gallery" class="stripe gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="carousel" aria-roledescription="carousel" aria-label="Project screenshots">
-        <button class="caro-btn prev" aria-label="Previous slide" data-caro-prev><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="caro-track" id="caroTrack">
-          <figure class="caro-slide current" aria-roledescription="slide">
-            <img src="12f302861d0339a1f821.jpg" alt="ETL dashboard">
-            <figcaption>ETL dashboard</figcaption>
-          </figure>
-          <figure class="caro-slide" aria-roledescription="slide">
-            <img src="eaa02c675895ca3b56a5.jpg" alt="Marketplace UI">
-            <figcaption>Marketplace UI</figcaption>
-          </figure>
-          <figure class="caro-slide" aria-roledescription="slide">
-            <img src="2befd7bd1dad66269ece.jpg" alt="Security app">
-            <figcaption>Security app</figcaption>
-          </figure>
-        </div>
-        <button class="caro-btn next" aria-label="Next slide" data-caro-next><i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
 
-  <!-- Stripe: Video -->
-  <section id="video" class="stripe video">
-    <div class="container">
-      <h2>Demo Video</h2>
-      <video controls preload="metadata" poster="12f302861d0339a1f821.jpg">
-        <source src="9668a976fd6de4763e1b.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+
+
+  <!-- PROJECTS: new section (your best 4–5) -->
+<section id="projects" class="stripe work">
+  <div class="container">
+    <h2>Projects</h2>
+
+    <div class="cards">
+
+      <!-- Predictive Credit -->
+      <article class="card">
+        <h3>Predictive Credit Limit Adjustment & Risk Segmentation</h3>
+        <p>
+          Forecasted Q4 customer spend and recommended credit line changes using LightGBM,
+          enabling personalized risk-aware credit decisions.
+        </p>
+        <a class="link-as-btn" href="https://www.kaggle.com/code/malharravigudekar/notebookebd4dc2b02" target="_blank" rel="noopener">
+          Case Study
+        </a>
+      </article>
+
+      <!-- BASILISK -->
+      <article class="card">
+        <h3>BASILISK — Security Hub</h3>
+        <p>
+          Hybrid cryptography platform for secure communication, integrity, and non-repudiation.
+          Published in a UGC Care Group 1 journal.
+        </p>
+        <a class="link-as-btn" href="https://github.com/malhar-123/Basilisk" target="_blank" rel="noopener">
+          Read More
+        </a>
+      </article>
+
+      <!-- F1 -->
+      <article class="card">
+        <h3>F1 Race Outcome Prediction (FastF1)</h3>
+        <p>
+          Engineered lap- and race-level features from FastF1 data and used GBM +
+          Monte Carlo simulations to predict grid finish positions.
+        </p>
+        <a class="link-as-btn" href="https://github.com/malhar-123/f1-race-prediction" target="_blank" rel="noopener">
+          View Project
+        </a>
+      </article>
+
+      <!-- FMCG Forecasting -->
+      <article class="card">
+        <h3>FMCG Sales Demand Forecasting</h3>
+        <p>
+          Built ARIMA-based demand forecasting models in R with 80% accuracy,
+          reducing stockouts and overstock through data-driven planning.
+        </p>
+        <a class="link-as-btn" href="https://github.com/malhar-123/fmcg-demand-forecasting" target="_blank" rel="noopener">
+          View Analysis
+        </a>
+      </article>
+
+      <!-- Database Systems -->
+      <article class="card">
+        <h3>Database Design for Nonresident Alien Payments</h3>
+        <p>
+          Designed SQL + Neo4j systems for tax-compliant payments,
+          modeling complex visa, treaty, and compliance relationships.
+        </p>
+        <a class="link-as-btn" href="https://malhar-123.github.io/tax-payment-data-model/" target="_blank" rel="noopener">
+          View Design
+        </a>
+      </article>
+
+      <!-- Optional: AR / Product -->
+      <article class="card">
+        <h3>AI-Powered AR Virtual Try-On (Product Case Study)</h3>
+        <p>
+          Led competitive analysis and customer segmentation to design an AR
+          roadmap for Glossier, projecting higher conversion and lower returns.
+        </p>
+        <a class="link-as-btn" href="./assets/IS534_Final_Presentation_Team_5.pdf" target="_blank" rel="noopener">
+          Case Study
+        </a>
+      </article>
+      <!-- Environmental Analytics -->
+      <article class="card">
+        <h3>Environmental Data Analytics & Visualization</h3>
+        <p>
+          Analyzed 7-year environmental trends using Power BI heat maps and tree maps,
+          identifying regional toxin concentration patterns.
+        </p>
+        <a class="link-as-btn" href="https://app.powerbi.com/reportEmbed?reportId=ee3bf52d-c2c5-4ef0-a2fc-21215337e93e&autoAuth=true&ctid=44467e6f-462c-4ea2-823f-7800de5434e3" target="_blank" rel="noopener">View Project</a>
+      </article>
+
+      <!-- Facial Analysis -->
+      <article class="card">
+        <h3>Advanced Facial Analysis System</h3>
+        <p>
+          Built a real-time computer vision pipeline using Python, OpenCV, and CNNs,
+          achieving 98% emotion classification accuracy.
+        </p>
+        <a class="link-as-btn" href="https://github.com/malhar-123/python_face_detection" target="_blank" rel="noopener">View Project</a>
+      </article>
+
+      <!-- Expense Tracker -->
+      <article class="card">
+        <h3>Mobile Expense Tracker App</h3>
+        <p>
+          Developed a Flutter-based mobile app with Provider state management and
+          interactive charts to visualize personal spending patterns.
+        </p>
+        <a class="link-as-btn" href="https://github.com/malhar-123/Mobile-Expense-Tracking-and-PA" target="_blank" rel="noopener">View App</a>
+      </article>  
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+  <section id="personal" class="stripe extras">
+  <div class="container">
+    <h2>Beyond Work</h2>
+
+    <ul class="extras-list">
+      <li>
+        <strong>Endurance & Discipline:</strong>
+        Long-distance running and triathlon training — consistency, goal-setting,
+        and showing up even when progress is incremental.
+      </li>
+
+      <li>
+        <strong>Systems Curiosity:</strong>
+        Formula 1 — performance optimization, data-driven strategy,
+        and engineering trade-offs under real-world constraints.
+      </li>
+
+      <li>
+        <strong>Craft & Focus:</strong>
+        Cooking as a way to unwind while still thinking in systems —
+        inputs, timing, iteration, and feedback.
+      </li>
+
+      <li>
+        <strong>Exploration:</strong>
+        Hiking and long drives — time to reset, reflect, and explore new environments.
+      </li>
+    </ul>
+  </div>
+</section>
+
 
   <!-- Stripe: Contact (centered) -->
   <section id="contact" class="stripe contact">
@@ -166,9 +531,9 @@
       <h2>Let’s connect</h2>
       <p>Reach out for collaborations or opportunities.</p>
       <div class="social">
-        <a aria-label="GitHub" href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a aria-label="LinkedIn" href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a aria-label="Email" href="mailto:you@example.com"><i class="fa-solid fa-envelope"></i></a>
+        <a aria-label="GitHub" href="https://github.com/malhar-123" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/malhar-gudekar/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a aria-label="Email" href="mailto:gudekar2@illinois.edu"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
   </section>
@@ -179,6 +544,41 @@
     </div>
   </footer>
 
-  <script src="97f91119318d54bdee1b.js" defer></script>
+  <script src="95c3f3d25dbc16e4eaa4.js" defer></script>
+
+  <!-- ── RAG CHATBOT ── -->
+  <button class="chat-bubble" id="chatBubble" aria-label="Open AI chat">
+    <i class="fa-solid fa-comment-dots chat-bubble__icon"></i>
+    <span class="chat-bubble__label">Ask AI</span>
+  </button>
+
+  <div class="chat-window" id="chatWindow" aria-hidden="true">
+    <div class="chat-window__header">
+      <div class="chat-window__header-info">
+        <span class="chat-window__avatar">🤖</span>
+        <div>
+          <p class="chat-window__name">Ask about Malhar</p>
+          <p class="chat-window__status">Powered by Groq · llama3-70b</p>
+        </div>
+      </div>
+      <button class="chat-window__close" id="chatClose" aria-label="Close chat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="chat-window__messages" id="chatMessages">
+      <div class="chat-msg chat-msg--bot">
+        <p>Hi! I'm Malhar's AI assistant. Ask me anything about his experience, projects, or skills.</p>
+      </div>
+    </div>
+    <div class="chat-window__input-row">
+      <input class="chat-window__input" id="chatInput" type="text" placeholder="Ask a question…" maxlength="500" autocomplete="off" />
+      <button class="chat-window__send" id="chatSend" aria-label="Send">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+  <!-- ── END RAG CHATBOT ── -->
+
 <script defer src="bundle.js"></script></body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
