@@ -1,98 +1,273 @@
-/*
- * This is the main entry point for Webpack, the compiler & dependency loader.
- * All files that are necessary for your web page and need to be 'watched' for changes should be included here!
- */
-
-// HTML Files
-import '../index.html';
-
-// Stylesheets
+// Import styles
 import '../css/styles.scss';
 
-// Scripts
-import './main.js';
-/* ========= Utilities ========= */
-const qs  = (sel, ctx=document) => ctx.querySelector(sel);
-const qsa = (sel, ctx=document) => [...ctx.querySelectorAll(sel)];
+// ===== CUSTOM CURSOR ANIMATION =====
+const customCursor = document.getElementById('customCursor');
 
-/* ========= Navbar: shrink on scroll ========= */
-const nav = qs('#navbar');
-const links = qsa('#navLinks a');
-const sections = links.map(a => qs(a.getAttribute('href')));
+document.addEventListener('mousemove', (e) => {
+  customCursor.style.left = e.clientX + 'px';
+  customCursor.style.top = e.clientY + 'px';
+});
 
-function resizeNav() {
-  if (window.scrollY > 10) nav.classList.add('compact');
-  else nav.classList.remove('compact');
-}
-window.addEventListener('scroll', resizeNav);
-resizeNav();
+// Hide custom cursor when mouse leaves window
+document.addEventListener('mouseleave', () => {
+  customCursor.style.opacity = '0';
+});
 
-/* ========= Smooth scrolling (no inline anchors behavior) ========= */
-links.forEach(a => {
-  a.addEventListener('click', e => {
+document.addEventListener('mouseenter', () => {
+  customCursor.style.opacity = '1';
+});
+
+// ===== SMOOTH SCROLLING FOR NAVIGATION =====
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
     e.preventDefault();
-    const id = a.getAttribute('href');
-    qs(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Update active state
+        navLinks.forEach((l) => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    }
   });
 });
 
-/* ========= Position indicator + active link ========= */
-const indicator = qs('#readingIndicator');
-function updateIndicator() {
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = Math.min(1, Math.max(0, window.scrollY / (docHeight || 1)));
-  indicator.style.width = `${progress * 100}%`;
+// Highlight nav link based on scroll position
+const observerOptions = {
+  threshold: 0.3,
+  rootMargin: '-100px 0px -66% 0px'
+};
 
-  // highlight the section whose top is just below nav bottom
-  const navBottom = nav.getBoundingClientRect().bottom + window.scrollY;
-  let activeIdx = sections.length - 1;
-  for (let i = 0; i < sections.length; i++) {
-    const top = sections[i].offsetTop;
-    if (top - 4 > navBottom) { activeIdx = Math.max(0, i - 1); break; }
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${entry.target.id}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('section[id]').forEach((section) => {
+  observer.observe(section);
+});
+
+// Set current year in footer (if footer exists)
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
+// Scroll animations for elements
+const scrollElements = document.querySelectorAll('.story-card, .exp-item, .project-card, .about-card, .achievement');
+
+const elementInView = (el, dividend = 1) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+};
+
+const elementOutofView = (el) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop > (window.innerHeight || document.documentElement.clientHeight);
+};
+
+const displayScrollElements = () => {
+  scrollElements.forEach((element) => {
+    if (elementInView(element, 1.25)) {
+      element.classList.add('scrolled');
+    } else if (elementOutofView(element)) {
+      element.classList.remove('scrolled');
+    }
+  });
+};
+
+window.addEventListener('scroll', () => {
+  displayScrollElements();
+});
+
+// Trigger on load
+displayScrollElements();
+
+// ===== COUNTER ANIMATION FOR BEYOND CODE STATS =====
+const animateCounter = (el) => {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1000;
+  const steps = 40;
+  const interval = duration / steps;
+  let current = 0;
+
+  const timer = setInterval(() => {
+    current += 1;
+    el.textContent = Math.round((target / steps) * current) + suffix;
+    if (current >= steps) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
+    }
+  }, interval);
+};
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const counter = entry.target.querySelector('.beyond-number[data-count]');
+      if (counter && !counter.dataset.animated) {
+        counter.dataset.animated = 'true';
+        animateCounter(counter);
+      }
+    }
+  });
+}, { threshold: 0.6 });
+
+document.querySelectorAll('.beyond-stat').forEach((stat) => {
+  counterObserver.observe(stat);
+});
+
+// ===== TOUCH SUPPORT FOR FLIP CARDS ON MOBILE =====
+const timelineContents = document.querySelectorAll('.timeline-content');
+
+timelineContents.forEach((content) => {
+  content.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    content.classList.toggle('flipped');
+  });
+
+  // Optional: click support too for better UX on mobile
+  content.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      content.classList.toggle('flipped');
+    }
+  });
+
+  // Reset flip when scrolling
+  window.addEventListener('scroll', () => {
+    content.classList.remove('flipped');
+  });
+});
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RAG CHATBOT — bubble toggle + message handling
+// ═══════════════════════════════════════════════════════════════════════════════
+
+(function () {
+  // ── Config ─────────────────────────────────────────────────────────────────
+  // Replace with your Render URL once deployed, e.g.:
+  // const API_BASE = 'https://malhar-portfolio-rag.onrender.com';
+  const API_BASE = 'https://malhar-portfolio-rag.onrender.com';
+
+  // ── Element refs ───────────────────────────────────────────────────────────
+  const bubble   = document.getElementById('chatBubble');
+  const chatWin  = document.getElementById('chatWindow');
+  const closeBtn = document.getElementById('chatClose');
+  const input    = document.getElementById('chatInput');
+  const sendBtn  = document.getElementById('chatSend');
+  const messages = document.getElementById('chatMessages');
+
+  if (!bubble || !chatWin) return; // guard: bail if markup isn't there
+
+  // ── Toggle open / close ───────────────────────────────────────────────────
+  let isOpen = false;
+
+  function openChat() {
+    isOpen = true;
+    chatWin.classList.add('chat-window--visible');
+    chatWin.setAttribute('aria-hidden', 'false');
+    bubble.classList.add('chat-bubble--open');
+    input.focus();
   }
-  links.forEach(l => l.classList.remove('active'));
-  links[activeIdx]?.classList.add('active');
-}
-window.addEventListener('scroll', updateIndicator);
-window.addEventListener('resize', updateIndicator);
-window.addEventListener('load', updateIndicator);
 
-/* ========= Modal logic (About + Work detail modals) ========= */
-function openModal(el) { el.setAttribute('aria-hidden', 'false'); }
-function closeModal(el) { el.setAttribute('aria-hidden', 'true'); }
+  function closeChat() {
+    isOpen = false;
+    chatWin.classList.remove('chat-window--visible');
+    chatWin.setAttribute('aria-hidden', 'true');
+    bubble.classList.remove('chat-bubble--open');
+  }
 
-qs('#openAboutModal').addEventListener('click', () => openModal(qs('#aboutModal')));
-qsa('[data-open]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = qs(btn.getAttribute('data-open'));
-    if (target) openModal(target);
+  bubble.addEventListener('click', () => (isOpen ? closeChat() : openChat()));
+  closeBtn.addEventListener('click', closeChat);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) closeChat();
   });
-});
-qsa('.modal').forEach(m => {
-  m.addEventListener('click', (e) => {
-    if (e.target.matches('[data-close], .modal__backdrop')) closeModal(m);
+
+  // ── Message helpers ────────────────────────────────────────────────────────
+  function appendMsg(text, role) {
+    const div = document.createElement('div');
+    div.className = `chat-msg chat-msg--${role}`;
+    const p = document.createElement('p');
+    p.textContent = text;
+    div.appendChild(p);
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-msg chat-msg--typing';
+    div.id = 'typingIndicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function removeTyping() {
+    const el = document.getElementById('typingIndicator');
+    if (el) el.remove();
+  }
+
+  // ── Send a message ─────────────────────────────────────────────────────────
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = '';
+    sendBtn.disabled = true;
+    appendMsg(text, 'user');
+    showTyping();
+
+    try {
+      const res = await fetch(`${API_BASE}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
+      });
+
+      removeTyping();
+
+      if (!res.ok) {
+        appendMsg('Sorry, something went wrong. Please try again.', 'bot');
+      } else {
+        const data = await res.json();
+        appendMsg(data.response, 'bot');
+      }
+    } catch {
+      removeTyping();
+      appendMsg(
+        'Could not reach the server. The backend may be waking up — please try again in ~30 seconds.',
+        'bot'
+      );
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
   });
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') qsa('.modal[aria-hidden="false"]').forEach(closeModal);
-});
-
-/* ========= Carousel (vanilla) ========= */
-const track = qs('#caroTrack');
-const prevBtn = qs('[data-caro-prev]');
-const nextBtn = qs('[data-caro-next]');
-let cur = 0;
-
-function go(idx) {
-  const slides = qsa('.caro-slide', track);
-  cur = (idx + slides.length) % slides.length;
-  track.style.transform = `translateX(-${cur * 100}%)`;
-  slides.forEach((s, i) => s.classList.toggle('current', i === cur));
-}
-prevBtn.addEventListener('click', () => go(cur - 1));
-nextBtn.addEventListener('click', () => go(cur + 1));
-let auto = setInterval(() => go(cur + 1), 5000);
-[prevBtn, nextBtn, track].forEach(el => el.addEventListener('pointerdown', () => { clearInterval(auto); }));
-
-/* ========= Footer year ========= */
-qs('#year').textContent = new Date().getFullYear();
+})();

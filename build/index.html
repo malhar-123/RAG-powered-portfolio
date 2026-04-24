@@ -3,182 +3,865 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Malhar Gudekar · Portfolio</title>
+  <title>Malhar | Building End-to-End Solutions</title>
 
-  <!-- Webfont (ok to use) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (allowed as “scalable vector icons through CSS”) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer"/>
-
-  <!--link rel="stylesheet" href="./css/styles.css" /-->
 </head>
 <body>
 
-  <!-- Sticky / Resizing Navbar with Position Indicator -->
-  <header id="top" class="site-header">
-    <nav class="nav" id="navbar">
-      <a class="logo" href="#top">MG</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" data-section="hero">Home</a></li>
-        <li><a href="#about" data-section="about">About</a></li>
-        <li><a href="#work" data-section="work">Work</a></li>
-        <li><a href="#gallery" data-section="gallery">Gallery</a></li>
-        <li><a href="#video" data-section="video">Video</a></li>
-        <li><a href="#contact" data-section="contact">Contact</a></li>
-      </ul>
-      <!-- position indicator bar -->
-      <div class="reading-indicator" id="readingIndicator"></div>
+  <!-- CUSTOM CURSOR -->
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="header-nav">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#leadership" class="nav-link">Leadership</a>
+      <a href="#exploring" class="nav-link">Exploring</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
 
-  <!-- Stripe: Hero (fixed background, vertical centering) -->
-  <section id="hero" class="stripe hero has-fixed-bg" aria-label="Intro">
-    <div class="hero__content">
-      <h1 class="hero__title">Hi, I’m Malhar.</h1>
-      <p class="hero__subtitle">Data · AI · Product. I build secure, human-centered systems.</p>
-      <div class="hero__cta">
-        <a class="btn" href="#work">View Work</a>
-        <button class="btn btn-outline" id="openAboutModal">Quick Bio</button>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Malhar Gudekar</h1>
+      <p class="hero-tagline">Building intelligent systems that solve real problems</p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">Work &amp; Growth Timeline</h2>
+      <div class="skills-evolution-timeline">
+        <!-- Timeline line -->
+        <div class="timeline-line"></div>
+
+        <!-- 2021: NSS Lead -->
+        <div class="timeline-item timeline-item-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="timeline-year">2021</span>
+                  <h3 class="timeline-title">NSS Lead: On-Ground Leadership</h3>
+                  <p class="timeline-subtitle">Event Management &amp; Analytics for Impact</p>
+                  <div class="skills-box">
+                    <span class="skill-chip">Team Leadership</span>
+                    <span class="skill-chip">Event Management</span>
+                    <span class="skill-chip">Data Analytics</span>
+                    <span class="skill-chip">Resource Optimization</span>
+                    <span class="skill-chip">Python</span>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="description-list">
+                    <li>Led 50+ volunteers across multiple events</li>
+                    <li>Built analytics dashboards for NGO partners</li>
+                    <li>Optimized resource and manpower distribution</li>
+                    <li>Impacted 1000+ underprivileged children's education</li>
+                    <li>Learned data-driven decision making with human impact</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2022: Mobile Dev Freelancing -->
+        <div class="timeline-item timeline-item-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="timeline-year">2022</span>
+                  <h3 class="timeline-title">Mobile Development: Learning by Building</h3>
+                  <p class="timeline-subtitle">Freelance Flutter &amp; Android Development</p>
+                  <div class="skills-box">
+                    <span class="skill-chip">Flutter</span>
+                    <span class="skill-chip">Dart</span>
+                    <span class="skill-chip">Android Development</span>
+                    <span class="skill-chip">REST APIs</span>
+                    <span class="skill-chip">User Design</span>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="description-list">
+                    <li>Built custom mobile apps for ecommerce clients</li>
+                    <li>Learned product development end-to-end</li>
+                    <li>Handled requirements gathering through deployment</li>
+                    <li>Shipped apps to production with real users</li>
+                    <li>Founded full-stack thinking through iteration</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2023: Internships & Graduation -->
+        <div class="timeline-item timeline-item-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="timeline-year">2023</span>
+                  <h3 class="timeline-title">Data Analytics: From Intern to Professional</h3>
+                  <p class="timeline-subtitle">PScope Technologies &amp; SWIFT MOBIL TECHNOLOGIES</p>
+                  <div class="skills-box">
+                    <span class="skill-chip">Power BI &amp; Tableau</span>
+                    <span class="skill-chip">PySpark &amp; Python</span>
+                    <span class="skill-chip">Excel &amp; VBA</span>
+                    <span class="skill-chip">AWS S3 &amp; ETL</span>
+                    <span class="skill-chip">Data Pipelines</span>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="description-list">
+                    <li>PScope Technologies (Jan-Jun): Built 20+ Power BI dashboards</li>
+                    <li>SWIFT MOBIL (Jul-Oct): Developed PySpark pipelines for 1M+ records</li>
+                    <li>Reduced computation time by 20%</li>
+                    <li>Improved budget utilization by 10%</li>
+                    <li>Learned professional development workflow and best practices</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2024: MS at UIUC -->
+        <div class="timeline-item timeline-item-4">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="timeline-year">2024</span>
+                  <h3 class="timeline-title">MS at UIUC: Advanced Learning</h3>
+                  <p class="timeline-subtitle">System Design, AI/ML, and Computer Science Fundamentals</p>
+                  <div class="skills-box">
+                    <span class="skill-chip">System Design</span>
+                    <span class="skill-chip">Machine Learning</span>
+                    <span class="skill-chip">Deep Learning</span>
+                    <span class="skill-chip">Distributed Systems</span>
+                    <span class="skill-chip">Advanced Algorithms</span>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="description-list">
+                    <li>Deep dived into system design fundamentals</li>
+                    <li>Studied distributed systems architecture</li>
+                    <li>Advanced machine learning and deep learning theory</li>
+                    <li>Learned the "why" behind architectural decisions</li>
+                    <li>Built foundation for scalable system design</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025: Production Systems & Growth -->
+        <div class="timeline-item timeline-item-5">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <span class="timeline-year">2025</span>
+                  <h3 class="timeline-title">Full-Stack Engineer &amp; AI Systems Builder</h3>
+                  <p class="timeline-subtitle">UIUC Research &amp; Technical Leadership</p>
+                  <div class="skills-box">
+                    <span class="skill-chip">Flutter &amp; Dart</span>
+                    <span class="skill-chip">RAG &amp; LLMs</span>
+                    <span class="skill-chip">FastAPI &amp; PostgreSQL</span>
+                    <span class="skill-chip">AWS &amp; Kafka</span>
+                    <span class="skill-chip">Project Leadership</span>
+                  </div>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="description-list">
+                    <li>Built mHealth app with Flutter for 100+ users</li>
+                    <li>Engineered RAG pipelines reducing manual lookup by 60%</li>
+                    <li>DeepCover Project Manager: 25% user growth, 4.0&#9733; ratings</li>
+                    <li>Leading cross-functional teams in AI/ML and research</li>
+                    <li>Shipping production systems combining research and execution</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Grid -->
+      <div class="about-grid">
+
+        <div class="about-card about-card--identity">
+          <div class="about-card-header">
+            <i class="fa-solid fa-database about-card-fa-icon"></i>
+            <h3>Who I Am</h3>
+          </div>
+          <p class="about-intro">Data Engineer &amp; AI/ML Engineer. Building production-grade pipelines and intelligent systems from raw data to deployed models.</p>
+          <ul class="facts-list">
+            <li class="fact-item">
+              <i class="fa-solid fa-brain fact-fa-icon"></i>
+              <div>RAG pipelines cutting manual lookup by <strong>60%</strong></div>
+            </li>
+            <li class="fact-item">
+              <i class="fa-solid fa-location-dot fact-fa-icon"></i>
+              <div><strong>Location:</strong> USA</div>
+            </li>
+            <li class="fact-item">
+              <i class="fa-solid fa-graduation-cap fact-fa-icon"></i>
+              <div><strong>MS Information Management</strong>, UIUC &middot; <strong>BE Computer Science</strong>, Mumbai University</div>
+            </li>
+            <li class="fact-item">
+              <i class="fa-solid fa-chart-line fact-fa-icon"></i>
+              <div>PySpark pipelines on <strong>1M+ records</strong>, cutting compute by <strong>20%</strong></div>
+            </li>
+          </ul>
+          <div class="stack-domains">
+            <div class="stack-domain">
+              <span class="stack-domain-label">Data</span>
+              <div class="stack-row">
+                <span class="stack-chip">PySpark</span>
+                <span class="stack-chip">Airflow</span>
+                <span class="stack-chip">Kafka</span>
+                <span class="stack-chip">dbt</span>
+              </div>
+            </div>
+            <div class="stack-domain">
+              <span class="stack-domain-label">ML</span>
+              <div class="stack-row">
+                <span class="stack-chip">PyTorch</span>
+                <span class="stack-chip">LLMs</span>
+                <span class="stack-chip">RAG</span>
+              </div>
+            </div>
+            <div class="stack-domain">
+              <span class="stack-domain-label">Cloud</span>
+              <div class="stack-row">
+                <span class="stack-chip">AWS</span>
+                <span class="stack-chip">PostgreSQL</span>
+                <span class="stack-chip">Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card about-card--beyond">
+          <div class="about-card-header">
+            <i class="fa-solid fa-earth-americas about-card-fa-icon"></i>
+            <h3>Beyond Code</h3>
+          </div>
+          <p class="about-intro">Life outside the terminal. Adventures, passions, and creative pursuits.</p>
+          <div class="beyond-grid">
+            <div class="beyond-stat">
+              <i class="fa-solid fa-mountain beyond-fa-icon"></i>
+              <span class="beyond-number" data-count="40" data-suffix="+">40+</span>
+              <span class="beyond-label">Mountain peaks climbed</span>
+            </div>
+            <div class="beyond-stat">
+              <i class="fa-solid fa-plane beyond-fa-icon"></i>
+              <span class="beyond-number" data-count="10" data-suffix="+">10+</span>
+              <span class="beyond-label">Countries explored</span>
+            </div>
+            <div class="beyond-stat">
+              <i class="fa-solid fa-flag-checkered beyond-fa-icon"></i>
+              <span class="beyond-number beyond-number--text">F1</span>
+              <span class="beyond-label">Racing enthusiast</span>
+            </div>
+            <div class="beyond-stat">
+              <i class="fa-solid fa-palette beyond-fa-icon"></i>
+              <span class="beyond-number beyond-number--text">Paint</span>
+              <span class="beyond-label">Painter</span>
+            </div>
+            <div class="beyond-stat">
+              <i class="fa-solid fa-person-running beyond-fa-icon"></i>
+              <span class="beyond-number beyond-number--text">Tri</span>
+              <span class="beyond-label">Triathlete</span>
+            </div>
+            <div class="beyond-stat beyond-stat--highlight">
+              <i class="fa-solid fa-motorcycle beyond-fa-icon"></i>
+              <span class="beyond-number beyond-number--text">Moto</span>
+              <span class="beyond-label">Ladakh circuit &amp; canyon roads</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Modal (About quick bio) -->
-  <div class="modal" id="aboutModal" aria-hidden="true" role="dialog" aria-labelledby="aboutTitle">
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__dialog" role="document">
-      <button class="modal__close" aria-label="Close" data-close>&times;</button>
-      <h2 id="aboutTitle">About Me (Quick)</h2>
-      <p>I’m a MSIM student at UIUC focused on data engineering, security, and AI-powered products.</p>
-      <p>Recent: Developer Productivity @ Synchrony, CHI Research Assistant (misinfo detection), SeeMe (GenAI art marketplace).</p>
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-intro">Real work, real data, real results.</p>
+
+      <div class="projects-grid">
+
+        <!-- FEATURED: F1 -->
+        <div class="project-card featured">
+          <span class="project-tag">Sports Analytics</span>
+          <h3>F1 Race Outcome Prediction</h3>
+          <ul class="bullet-list">
+            <li>Engineered <strong>18 features</strong> from FastF1 telemetry covering lap times, driver form, and team performance</li>
+            <li>Combined Gradient Boosting with <strong>5,000-run Monte Carlo simulations</strong> to predict grid finishing positions</li>
+            <li>Achieved <strong>R&sup2; 0.687</strong> and RMSE 7.50 on held-out race data</li>
+            <li>Built an agentic AI layer that converts natural language into structured race scenarios</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>LightGBM</span>
+            <span>XGBoost</span>
+            <span>FastF1</span>
+            <span>Monte Carlo</span>
+            <span>Scikit-learn</span>
+          </div>
+          <a href="https://github.com/malhar-123/f1-race-prediction" target="_blank" rel="noopener" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <!-- Predictive Credit -->
+        <div class="project-card">
+          <span class="project-tag">Financial ML</span>
+          <h3>Predictive Credit Limit &amp; Risk Segmentation</h3>
+          <ul class="bullet-list">
+            <li>Forecasted Q4 customer spend using <strong>LightGBM</strong> to recommend personalised credit line adjustments</li>
+            <li>Combined regression and risk classification for end-to-end credit lifecycle modelling</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>LightGBM</span>
+            <span>Risk Modelling</span>
+          </div>
+          <a href="https://www.kaggle.com/code/malharravigudekar/notebookebd4dc2b02" target="_blank" rel="noopener" class="project-link">Case Study &rarr;</a>
+        </div>
+
+        <!-- FMCG -->
+        <div class="project-card">
+          <span class="project-tag">Forecasting</span>
+          <h3>FMCG Sales Demand Forecasting</h3>
+          <ul class="bullet-list">
+            <li>Built multi-model pipeline (SARIMA, ARIMA, Exponential Smoothing, Random Forest) across <strong>5 product categories</strong> in R</li>
+            <li><strong>95%+</strong> of actual values fell within forecast confidence intervals</li>
+            <li>Surfaced promotion impact and seasonality drivers to reduce stockouts and overstock</li>
+          </ul>
+          <div class="project-tech">
+            <span>R</span>
+            <span>SARIMA</span>
+            <span>ARIMA</span>
+            <span>Random Forest</span>
+            <span>ggplot2</span>
+          </div>
+          <a href="https://github.com/malhar-123/fmcg-demand-forecasting" target="_blank" rel="noopener" class="project-link">View Analysis &rarr;</a>
+        </div>
+
+        <!-- Environmental Analytics -->
+        <div class="project-card">
+          <span class="project-tag">Data Viz</span>
+          <h3>Environmental Analytics &amp; Visualization</h3>
+          <ul class="bullet-list">
+            <li>Analyzed <strong>7 years</strong> of environmental data using Power BI heat maps and tree maps</li>
+            <li>Identified regional toxin concentration patterns and pollution hotspots across geographic dimensions</li>
+          </ul>
+          <div class="project-tech">
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>Data Modelling</span>
+          </div>
+          <a href="https://app.powerbi.com/reportEmbed?reportId=ee3bf52d-c2c5-4ef0-a2fc-21215337e93e&autoAuth=true&ctid=44467e6f-462c-4ea2-823f-7800de5434e3" target="_blank" rel="noopener" class="project-link">View Dashboard &rarr;</a>
+        </div>
+
+        <!-- BASILISK -->
+        <div class="project-card">
+          <span class="project-tag">Security &middot; Published</span>
+          <h3>BASILISK: Security Hub</h3>
+          <ul class="bullet-list">
+            <li>Implemented <strong>AES, DES3, MD5</strong>, and onion routing for secure communication and data integrity</li>
+            <li>Supports non-repudiation across hybrid cryptography workflows</li>
+            <li>Published in a <strong>UGC Care Group 1</strong> peer-reviewed journal</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>AES / DES3</span>
+            <span>Onion Routing</span>
+            <span>Cryptography</span>
+          </div>
+          <a href="https://github.com/malhar-123/Basilisk" target="_blank" rel="noopener" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <!-- Facial Analysis -->
+        <div class="project-card">
+          <span class="project-tag">Computer Vision</span>
+          <h3>Advanced Facial Analysis System</h3>
+          <ul class="bullet-list">
+            <li>Built real-time computer vision pipeline using Python and OpenCV for live video stream processing</li>
+            <li>Applied CNNs for emotion and facial feature classification, achieving <strong>98% accuracy</strong></li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>CNN</span>
+            <span>Deep Learning</span>
+          </div>
+          <a href="https://github.com/malhar-123/python_face_detection" target="_blank" rel="noopener" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <!-- Database NRA -->
+        <div class="project-card">
+          <span class="project-tag">Data Modelling</span>
+          <h3>Database Design for Nonresident Alien Payments</h3>
+          <ul class="bullet-list">
+            <li>Designed <strong>SQL and Neo4j</strong> systems for tax-compliant international payment workflows</li>
+            <li>Modeled visa status, tax treaty rules, and compliance forms (W-8BEN, 8233) across EER and relational schemas</li>
+            <li>Supports automated withholding decisions and audit-ready payment records</li>
+          </ul>
+          <div class="project-tech">
+            <span>SQL</span>
+            <span>Neo4j</span>
+            <span>EER Modelling</span>
+            <span>Data Architecture</span>
+          </div>
+          <a href="https://malhar-123.github.io/tax-payment-data-model/" target="_blank" rel="noopener" class="project-link">View Design &rarr;</a>
+        </div>
+
+        <!-- AR Case Study -->
+        <div class="project-card">
+          <span class="project-tag">Product Strategy</span>
+          <h3>AI-Powered AR Virtual Try-On</h3>
+          <ul class="bullet-list">
+            <li>Led competitive analysis and customer segmentation to design a data-informed AR product roadmap for Glossier</li>
+            <li>Projected higher conversion rates and reduced return rates through market-research-backed feature prioritization</li>
+          </ul>
+          <div class="project-tech">
+            <span>Product Strategy</span>
+            <span>Customer Segmentation</span>
+            <span>AR / AI</span>
+          </div>
+          <a href="./assets/IS534_Final_Presentation_Team_5.pdf" target="_blank" rel="noopener" class="project-link">Case Study &rarr;</a>
+        </div>
+
+        <!-- Mobile Expense Tracker -->
+        <div class="project-card">
+          <span class="project-tag">Mobile</span>
+          <h3>Mobile Expense Tracker App</h3>
+          <ul class="bullet-list">
+            <li>Built cross-platform <strong>Flutter</strong> app with Provider state management and interactive spending charts</li>
+            <li>Deployed across Android, iOS, Web, Windows, macOS, and Linux from a single codebase</li>
+          </ul>
+          <div class="project-tech">
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Provider</span>
+            <span>Cross-Platform</span>
+          </div>
+          <a href="https://github.com/malhar-123/Mobile-Expense-Tracking-and-PA" target="_blank" rel="noopener" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-intro">Where I've worked and what I've built.</p>
+
+      <div class="exp-timeline">
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3>Research Assistant</h3>
+              <span class="exp-role">University of Illinois Urbana-Champaign, iSchool</span>
+            </div>
+            <span class="exp-date">May 2025 &ndash; Present &middot; Champaign, IL</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Owned end-to-end design and integration of a cross-platform system ingesting wearable health data for <strong>100+ users</strong></li>
+            <li>Optimized PostgreSQL schema, indexing strategies, and query execution plans, improving performance by <strong>38%</strong></li>
+            <li>Built production-ready Python pipelines with RAG-based context summarization, boosting multi-turn response accuracy by <strong>43%</strong></li>
+            <li>Developed backend workflows for real-time, fault-tolerant processing of longitudinal health data</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Python</span>
+            <span>PostgreSQL</span>
+            <span>RAG</span>
+            <span>FastAPI</span>
+            <span>Wearable Data</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3>Research Assistant</h3>
+              <span class="exp-role">University of Illinois Urbana-Champaign, CHI AI in Infodemic Management</span>
+            </div>
+            <span class="exp-date">Jan 2025 &ndash; May 2025 &middot; Champaign, IL</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Designed and deployed scalable NLP pipelines in Python to process high-volume social media datasets, cutting processing latency by <strong>41%</strong></li>
+            <li>Built distributed inference pipelines using Hugging Face and Neo4j for real-time infodemic detection and pattern recognition</li>
+            <li>Developed production-grade REST APIs using FastAPI with validation, error handling, and monitoring across distributed system architectures</li>
+            <li>Enabled large-scale data processing across social media streams using distributed system architecture principles</li>
+          </ul>
+          <div class="exp-tags">
+            <span>NLP</span>
+            <span>Hugging Face</span>
+            <span>Neo4j</span>
+            <span>FastAPI</span>
+            <span>Distributed Systems</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3>Technical Consultant</h3>
+              <span class="exp-role">Business Intelligence Group</span>
+            </div>
+            <span class="exp-date">Aug 2025 &ndash; Dec 2025 &middot; Champaign, IL</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Architected a microservices-based RAG system using FastAPI, PostgreSQL, and vector embeddings for production-grade document retrieval</li>
+            <li>Designed fault-tolerant ETL pipelines to process and index large document datasets for low-latency retrieval</li>
+            <li>Improved overall system performance by <strong>64%</strong> through optimized indexing strategies and query tuning</li>
+            <li>Built backend services enabling real-time, high-performance querying of unstructured data across distributed architectures</li>
+          </ul>
+          <div class="exp-tags">
+            <span>RAG</span>
+            <span>ETL</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>Vector Embeddings</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3>Data Analyst</h3>
+              <span class="exp-role">Swift Mobil Software Solutions Provider</span>
+            </div>
+            <span class="exp-date">Jul 2023 &ndash; Dec 2023 &middot; Mumbai, India</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Built interactive Power BI dashboards for logistics and mobility KPIs, reducing reporting time by <strong>40%</strong></li>
+            <li>Processed and optimized large-scale operational datasets using Python and PySpark to identify failure patterns and trends</li>
+            <li>Developed SQL and graph queries for dependency mapping and root-cause analysis, speeding issue resolution by <strong>26%</strong></li>
+          </ul>
+          <div class="exp-tags">
+            <span>Power BI</span>
+            <span>PySpark</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Graph Queries</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <h3>Data Analyst</h3>
+              <span class="exp-role">PScope Technologies Pvt. Ltd.</span>
+            </div>
+            <span class="exp-date">Jan 2023 &ndash; Jun 2023 &middot; Mumbai, India</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Developed and maintained <strong>20+ Power BI dashboards</strong> across Sales, Finance, and Operations using SQL and DAX</li>
+            <li>Automated recurring Excel reporting workflows using VBA, cutting report preparation time by <strong>42%</strong></li>
+            <li>Improved data consistency across weekly reporting cycles through validation and transformation logic</li>
+          </ul>
+          <div class="exp-tags">
+            <span>Power BI</span>
+            <span>SQL</span>
+            <span>DAX</span>
+            <span>VBA</span>
+            <span>Excel</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p class="section-intro">The foundations behind the work.</p>
+
+      <div class="edu-items">
+        <div class="edu-item">
+          <div class="edu-header">
+            <div>
+              <h3>Master of Science in Information Management</h3>
+              <span class="edu-school">University of Illinois Urbana-Champaign</span>
+            </div>
+            <span class="edu-date">2024 &ndash; 2025 &middot; Champaign, IL</span>
+          </div>
+          <p>Focused on data systems, information architecture, and applied machine learning. Coursework spanning distributed systems, NLP, data engineering pipelines, and human-centered AI design.</p>
+          <div class="exp-tags">
+            <span>Machine Learning</span>
+            <span>Distributed Systems</span>
+            <span>NLP</span>
+            <span>Data Engineering</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-header">
+            <div>
+              <h3>Bachelor of Engineering in Computer Science</h3>
+              <span class="edu-school">Mumbai University</span>
+            </div>
+            <span class="edu-date">2019 &ndash; 2023 &middot; Mumbai, India</span>
+          </div>
+          <p>Built strong fundamentals in algorithms, data structures, operating systems, and software engineering. Hands-on experience through projects in mobile development, data analytics, and systems programming.</p>
+          <div class="exp-tags">
+            <span>Algorithms</span>
+            <span>Data Structures</span>
+            <span>Systems Programming</span>
+            <span>Software Engineering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP SECTION -->
+  <section id="leadership" class="leadership">
+    <div class="container">
+      <h2 class="section-title">Leadership &amp; Campus Roles</h2>
+      <p class="section-intro">Initiatives and impact beyond the day job.</p>
+
+      <div class="leadership-grid">
+
+        <div class="leadership-card">
+          <div class="leadership-card-header">
+            <div>
+              <h3>Project Manager</h3>
+              <span class="leadership-org">StarDis at Illinois</span>
+            </div>
+            <span class="leadership-date">Aug 2025 &ndash; Present</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Led a cross-functional team of <strong>6 engineers and designers</strong> delivering product updates for DeepCover</li>
+            <li>Drove sprint planning, backlog grooming, and QA issue tracking through JIRA</li>
+            <li>Improved on-time milestone delivery and cross-team visibility</li>
+          </ul>
+        </div>
+
+        <div class="leadership-card">
+          <div class="leadership-card-header">
+            <div>
+              <h3>Student Career Navigator</h3>
+              <span class="leadership-org">UIUC Career Center</span>
+            </div>
+            <span class="leadership-date">Aug 2025 &ndash; Present</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Analyzed <strong>17,000+ student records</strong> for the Illinois Success Report to identify academic and engagement trends</li>
+            <li>Mentored <strong>10+ students</strong> on career strategy, resume positioning, and networking</li>
+            <li>Improved job-search confidence by <strong>35%</strong> through targeted coaching and workshops</li>
+          </ul>
+        </div>
+
+        <div class="leadership-card">
+          <div class="leadership-card-header">
+            <div>
+              <h3>Data Quality &amp; Accessibility Assistant</h3>
+              <span class="leadership-org">University of Illinois System</span>
+            </div>
+            <span class="leadership-date">Jun 2025 &ndash; Present &middot; Remote</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Standardized <strong>50+ institutional documents</strong> by improving structure, metadata, and tagging using Adobe Acrobat Pro DC</li>
+            <li>Validated screen-reader compatibility through manual QA checks</li>
+            <li>Contributed to accessibility KPI tracking across university reporting systems</li>
+          </ul>
+        </div>
+
+        <div class="leadership-card">
+          <div class="leadership-card-header">
+            <div>
+              <h3>Team Lead</h3>
+              <span class="leadership-org">National Service Scheme</span>
+            </div>
+            <span class="leadership-date">Jun 2020 &ndash; Jun 2022 &middot; India</span>
+          </div>
+          <ul class="bullet-list">
+            <li>Organized food donation drives, child welfare programs, and environmental clean-up campaigns</li>
+            <li>Led week-long rural outreach camps, conducting surveys to identify local challenges</li>
+            <li>Coordinated volunteers and logistics, directly impacting <strong>1,000+ individuals</strong></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS/METRICS SECTION -->
+  <section id="achievements" class="achievements">
+    <div class="container">
+      <h2 class="section-title">By the Numbers</h2>
+      <p class="section-intro">Production scale, measurable impact, real results.</p>
+
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-value">10M+</div>
+          <div class="metric-label">Records Processed</div>
+          <div class="metric-context">PySpark pipelines in production</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">64%</div>
+          <div class="metric-label">Peak Performance Lift</div>
+          <div class="metric-context">System improvement delivered at BIG</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">5+</div>
+          <div class="metric-label">Data &amp; ML Roles</div>
+          <div class="metric-context">Across research and industry</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">9</div>
+          <div class="metric-label">Projects Shipped</div>
+          <div class="metric-context">Spanning ML, DE, CV, and AI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENTLY EXPLORING SECTION -->
+  <section id="exploring" class="exploring">
+    <div class="container">
+      <h2 class="section-title">Currently Exploring</h2>
+      <p class="section-intro">Technologies I am actively learning, not randomly, but as deliberate next steps in my stack.</p>
+
+      <div class="exploring-grid">
+
+        <div class="exploring-card">
+          <div class="exploring-card-top">
+            <span class="exploring-domain">Streaming</span>
+            <span class="exploring-status"><i class="fa-solid fa-circle-dot"></i> Active</span>
+          </div>
+          <h3>Apache Flink</h3>
+          <p>Stateful stream processing at scale. Exploring Flink as the real-time processing layer on top of my existing Kafka work, moving from batch to event-driven pipelines.</p>
+        </div>
+
+        <div class="exploring-card">
+          <div class="exploring-card-top">
+            <span class="exploring-domain">Data Modeling</span>
+            <span class="exploring-status"><i class="fa-solid fa-circle-dot"></i> Active</span>
+          </div>
+          <h3>dbt</h3>
+          <p>The standard transformation layer in modern data stacks. Learning dbt to bring software engineering practices like testing, versioning, and documentation into SQL-based pipelines.</p>
+        </div>
+
+        <div class="exploring-card">
+          <div class="exploring-card-top">
+            <span class="exploring-domain">ML Ops</span>
+            <span class="exploring-status"><i class="fa-solid fa-circle-dot"></i> Active</span>
+          </div>
+          <h3>RAGAS</h3>
+          <p>LLM evaluation framework for RAG systems. Building on my existing RAG pipeline work to add structured evaluation across faithfulness, answer relevancy, and context precision metrics.</p>
+        </div>
+
+        <div class="exploring-card">
+          <div class="exploring-card-top">
+            <span class="exploring-domain">Data Lake</span>
+            <span class="exploring-status"><i class="fa-solid fa-circle-dot"></i> Active</span>
+          </div>
+          <h3>Apache Iceberg</h3>
+          <p>Open table format for huge analytic datasets. Exploring Iceberg as the lakehouse layer for time-travel queries, schema evolution, and scalable partitioning on top of object storage.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-intro">Open to data engineering and AI/ML roles. Shoot me an email and I will get back to you.</p>
+
+      <a href="mailto:gudekar2@illinois.edu" class="contact-email-btn">
+        <i class="fa-solid fa-envelope"></i>
+        Email Me
+      </a>
+
+      <div class="contact-info">
+        <a href="https://linkedin.com/in/malhar-gudekar" class="contact-link"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/malhar-123" class="contact-link"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://www.kaggle.com/malharravigudekar" class="contact-link"><i class="fa-brands fa-kaggle"></i> Kaggle</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="09142f499f80d42aa443.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       RAG CHATBOT — chat bubble + window (no design changes above)
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- Chat bubble trigger -->
+  <button class="chat-bubble" id="chatBubble" aria-label="Open AI chat">
+    <i class="fa-solid fa-comment-dots chat-bubble__icon"></i>
+    <span class="chat-bubble__label">Ask AI</span>
+  </button>
+
+  <!-- Chat window -->
+  <div class="chat-window" id="chatWindow" aria-hidden="true">
+    <div class="chat-window__header">
+      <div class="chat-window__header-info">
+        <span class="chat-window__avatar">🤖</span>
+        <div>
+          <p class="chat-window__name">Ask about Malhar</p>
+          <p class="chat-window__status" id="chatStatus">Powered by Groq · llama3-8b</p>
+        </div>
+      </div>
+      <button class="chat-window__close" id="chatClose" aria-label="Close chat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="chat-window__messages" id="chatMessages">
+      <div class="chat-msg chat-msg--bot">
+        <p>Hi! I'm Malhar's AI assistant. Ask me anything about his experience, projects, or skills.</p>
+      </div>
+    </div>
+
+    <div class="chat-window__input-row">
+      <input
+        class="chat-window__input"
+        id="chatInput"
+        type="text"
+        placeholder="Ask a question…"
+        maxlength="500"
+        autocomplete="off"
+      />
+      <button class="chat-window__send" id="chatSend" aria-label="Send">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
     </div>
   </div>
+  <!-- END RAG CHATBOT -->
 
-  <!-- Stripe: About (multi-column layout) -->
-  <section id="about" class="stripe about">
-    <div class="container columns">
-      <div class="col">
-        <img class="portrait" src="ad73cc6843d9c4c9dac3.jpg" alt="Portrait of Malhar">
-      </div>
-      <div class="col">
-        <h2>About</h2>
-        <p>I design and ship data/AI features with measurable impact. Interests: trustworthy AI, secure pipelines, clean UX.</p>
-        <ul class="badges">
-          <li><i class="fa-solid fa-shield"></i> BASILISK Security Hub</li>
-          <li><i class="fa-solid fa-database"></i> AWS + Spark + ETL</li>
-          <li><i class="fa-solid fa-wand-magic-sparkles"></i> GenAI UX</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stripe: Work (cards) -->
-  <section id="work" class="stripe work">
-    <div class="container">
-      <h2>Selected Work</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>CHI – Infodemic AI</h3>
-          <p>Kafka → Neo4j → EKS pipeline for real-time health misinfo detection.</p>
-          <button class="link-as-btn" data-open="#details-chi">Details</button>
-        </article>
-        <article class="card">
-          <h3>SeeMe – Collections</h3>
-          <p>Next.js feature set: collections, AI descriptions, Pinecone embeddings.</p>
-          <button class="link-as-btn" data-open="#details-seeme">Details</button>
-        </article>
-        <article class="card">
-          <h3>BASILISK – Security Hub</h3>
-          <p>Hybrid crypto tooling for integrity, auth, and non-repudiation.</p>
-          <button class="link-as-btn" data-open="#details-basilisk">Details</button>
-        </article>
-      </div>
-    </div>
-
-    <!-- Hidden modals per project -->
-    <div class="modal" id="details-chi" aria-hidden="true" role="dialog">
-      <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog">
-        <button class="modal__close" aria-label="Close" data-close>&times;</button>
-        <h3>CHI – Infodemic AI</h3>
-        <p>NLP models on TikTok vaccine content; GDPR/WHO compliant deployment.</p>
-      </div>
-    </div>
-    <div class="modal" id="details-seeme" aria-hidden="true" role="dialog">
-      <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog">
-        <button class="modal__close" aria-label="Close" data-close>&times;</button>
-        <h3>SeeMe – Collections</h3>
-        <p>Slug routing, collection covers, server actions, Postgres, Pinecone.</p>
-      </div>
-    </div>
-    <div class="modal" id="details-basilisk" aria-hidden="true" role="dialog">
-      <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog">
-        <button class="modal__close" aria-label="Close" data-close>&times;</button>
-        <h3>BASILISK – Security Hub</h3>
-        <p>Hybrid cryptography, automated keygen, perf-tuned Python pipelines.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stripe: Gallery (Carousel) -->
-  <section id="gallery" class="stripe gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div class="carousel" aria-roledescription="carousel" aria-label="Project screenshots">
-        <button class="caro-btn prev" aria-label="Previous slide" data-caro-prev><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="caro-track" id="caroTrack">
-          <figure class="caro-slide current" aria-roledescription="slide">
-            <img src="12f302861d0339a1f821.jpg" alt="ETL dashboard">
-            <figcaption>ETL dashboard</figcaption>
-          </figure>
-          <figure class="caro-slide" aria-roledescription="slide">
-            <img src="eaa02c675895ca3b56a5.jpg" alt="Marketplace UI">
-            <figcaption>Marketplace UI</figcaption>
-          </figure>
-          <figure class="caro-slide" aria-roledescription="slide">
-            <img src="2befd7bd1dad66269ece.jpg" alt="Security app">
-            <figcaption>Security app</figcaption>
-          </figure>
-        </div>
-        <button class="caro-btn next" aria-label="Next slide" data-caro-next><i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stripe: Video -->
-  <section id="video" class="stripe video">
-    <div class="container">
-      <h2>Demo Video</h2>
-      <video controls preload="metadata" poster="12f302861d0339a1f821.jpg">
-        <source src="9668a976fd6de4763e1b.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-
-  <!-- Stripe: Contact (centered) -->
-  <section id="contact" class="stripe contact">
-    <div class="container center">
-      <h2>Let’s connect</h2>
-      <p>Reach out for collaborations or opportunities.</p>
-      <div class="social">
-        <a aria-label="GitHub" href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a aria-label="LinkedIn" href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a aria-label="Email" href="mailto:you@example.com"><i class="fa-solid fa-envelope"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="stripe footer">
-    <div class="container">
-      <small>&copy; <span id="year"></span> Malhar Gudekar</small>
-    </div>
-  </footer>
-
-  <script src="97f91119318d54bdee1b.js" defer></script>
 <script defer src="bundle.js"></script></body>
 </html>
