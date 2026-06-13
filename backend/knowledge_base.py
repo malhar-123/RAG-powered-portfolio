@@ -258,4 +258,9 @@ drives and rural outreach camps directly impacting 1,000+ individuals.""",
 
     # ── CONTACT ───────────────────────────────────────────────────────────────
     """Malhar Gudekar contact information and links:
-Email: gudekar2
+Email: gudekar2@illinois.edu
+LinkedIn: https://linkedin.com/in/malhar-gudekar
+GitHub: https://github.com/malhar-123
+Portfolio: https://malhar-123.github.io/RAG-powered-portfolio/""",
+
+]
