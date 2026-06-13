@@ -26,13 +26,18 @@ DOCUMENTS = [
    Improved system performance by 64% through optimized indexing.
    Stack: RAG, ETL, FastAPI, PostgreSQL, pgVector, Vector Embeddings.
 
-4. Data Analyst, Swift Mobil Software Solutions (Jul 2023 - Dec 2023, Mumbai India)
+4. Technical Project Manager, StarDis at Illinois (Aug 2025 - Present, Champaign IL)
+   Led a cross-functional team of 6 engineers and designers delivering product updates for DeepCover.
+   Drove sprint planning, backlog grooming, and QA issue tracking through JIRA.
+   Drove 25% user growth and improved app ratings to 4.0 stars.
+
+5. Data Analyst, Swift Mobil Software Solutions (Jul 2023 - Dec 2023, Mumbai India)
    Built Power BI dashboards for logistics KPIs, reducing reporting time by 40%.
    Processed large datasets using PySpark to identify failure patterns.
    Developed SQL and graph queries speeding issue resolution by 26%.
    Stack: Power BI, PySpark, Python, SQL, Neo4j, AWS S3.
 
-5. Data Scientist, PScope Technologies (Jan 2023 - Jun 2023, Mumbai India)
+6. Data Scientist, PScope Technologies (Jan 2023 - Jun 2023, Mumbai India)
    Deployed ML models and statistical solutions for enterprise clients.
    Performed EDA and statistical validation, improving data accuracy by 30%.
    Stack: Power BI, SQL, DAX, VBA, Excel, Jira.""",
@@ -206,7 +211,7 @@ Languages: Python, R, SQL, Dart, JavaScript.""",
 
     # ── LEADERSHIP ────────────────────────────────────────────────────────────
     """Malhar's leadership and campus roles:
-Project Manager at StarDis at Illinois (Aug 2025 to Present): Led a cross-functional
+Technical Project Manager at StarDis at Illinois (Aug 2025 to Present): Led a cross-functional
 team of 6 engineers and designers delivering product updates for DeepCover.
 Drove sprint planning, backlog grooming, and QA issue tracking through JIRA.
 Drove 25% user growth and improved app ratings to 4.0 stars.
