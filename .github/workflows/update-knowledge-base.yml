@@ -1,0 +1,36 @@
+name: Update Knowledge Base from Resumes
+
+on:
+  push:
+    branches: ["v2"]
+    paths:
+      - "resumes/**.pdf"
+
+permissions:
+  contents: write
+
+jobs:
+  update-kb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pypdf
+
+      - name: Run knowledge base updater
+        run: python backend/update_knowledge_base.py
+
+      - name: Commit updated knowledge_base.py
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add backend/knowledge_base.py
+          git diff --staged --quiet || git commit -m "Auto-update knowledge base from resumes"
+          git push
