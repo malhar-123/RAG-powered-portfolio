@@ -62,8 +62,13 @@ app.add_middleware(
 
 
 # Schemas
+class ChatMessage(BaseModel):
+    role: str   # "user" or "assistant"
+    content: str
+
 class ChatRequest(BaseModel):
     message: str
+    history: list[ChatMessage] = []
 
 
 class ChatResponse(BaseModel):
@@ -145,13 +150,17 @@ async def chat(req: ChatRequest):
         f"Context about Malhar:\n{context}"
     )
 
+    # 3. Build messages array with history (last 8 messages)
+    history = req.history[-8:]
+    messages = [{"role": "system", "content": system_prompt}]
+    for h in history:
+        messages.append({"role": h.role, "content": h.content})
+    messages.append({"role": "user", "content": user_msg})
+
     try:
         completion = groq_client.chat.completions.create(
             model="llama-3.3-70b-versatile",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_msg},
-            ],
+            messages=messages,
             max_tokens=300,
             temperature=0.3,
         )
