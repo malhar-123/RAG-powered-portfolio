@@ -78,14 +78,12 @@ speeding issue resolution by 26%.
 Tech stack: Power BI, PySpark, Python, SQL, Neo4j, Graph Queries, AWS S3.""",
 
     # ── EXPERIENCE: PScope Technologies ──────────────────────────────────────
-    """Malhar worked as a Data Analyst at PScope Technologies Pvt. Ltd.
+    """Malhar worked as a Data Scientist at PScope Technologies Pvt. Ltd.
 from January 2023 to June 2023 (Mumbai India).
-He developed and maintained 20+ Power BI dashboards across Sales, Finance,
-and Operations using SQL and DAX.
-He automated recurring Excel reporting workflows using VBA, cutting report
-preparation time by 42%.
-He improved data consistency across weekly reporting cycles through validation
-and transformation logic.
+Developed and deployed statistical models and machine learning solutions for enterprise clients, using SQL and Python to extract predictive
+insights and improve business decision-making across multiple domains
+Performed exploratory data analysis and statistical validation on large multi-source datasets, improving data accuracy by 30% and enabling
+reliable machine learning workflows across client analytics functions
 Tech stack: Power BI, SQL, DAX, VBA, Excel, Jira.""",
 
     # ── PROJECT: F1 Race Prediction ───────────────────────────────────────────
