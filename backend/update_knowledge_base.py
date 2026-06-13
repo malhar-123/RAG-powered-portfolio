@@ -17,7 +17,30 @@ except ImportError:
 RESUMES_DIR = os.path.join(os.path.dirname(__file__), '..', 'resumes')
 KB_FILE = os.path.join(os.path.dirname(__file__), 'knowledge_base.py')
 
-RESUME_MARKER = "# ── AUTO-GENERATED RESUME DOCUMENTS ─────────────────────────────────────────"
+RESUME_MARKER = "# == AUTO-GENERATED RESUME DOCUMENTS ============================================="
+
+
+def clean_text(text):
+    """Remove or replace characters that would break Python string syntax."""
+    # Replace triple quotes to avoid breaking the string delimiter
+    text = text.replace('"""', "'''")
+    # Replace problematic unicode characters
+    replacements = {
+        '—': '-',   # em dash
+        '–': '-',   # en dash
+        '‘': "'",   # left single quote
+        '’': "'",   # right single quote
+        '“': '"',   # left double quote
+        '”': '"',   # right double quote
+        '•': '-',   # bullet
+        ' ': ' ',   # non-breaking space
+        '�': '',    # replacement character
+    }
+    for char, replacement in replacements.items():
+        text = text.replace(char, replacement)
+    # Remove any remaining non-ASCII characters that could cause issues
+    text = text.encode('ascii', errors='ignore').decode('ascii')
+    return text
 
 
 def extract_text_from_pdf(pdf_path):
@@ -28,7 +51,7 @@ def extract_text_from_pdf(pdf_path):
             t = page.extract_text()
             if t:
                 text.append(t.strip())
-    return "\n".join(text)
+    return clean_text("\n".join(text))
 
 
 def parse_filename(filename):
@@ -52,7 +75,7 @@ def main():
         try:
             text = extract_text_from_pdf(pdf_path)
             if text.strip():
-                doc = f"""TAILORED RESUME — {label}
+                doc = f"""TAILORED RESUME - {label}
 {text}"""
                 resume_docs.append(doc)
             else:
