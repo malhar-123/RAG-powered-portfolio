@@ -5,6 +5,38 @@ Each string is an independently retrievable document chunk.
 
 DOCUMENTS = [
 
+    # ── ALL WORK EXPERIENCE (consolidated for full retrieval) ─────────────────
+    """COMPLETE WORK EXPERIENCE - Malhar Gudekar
+
+1. Research Assistant, UIUC iSchool (May 2025 - Present, Champaign IL)
+   Built a cross-platform mHealth system ingesting wearable data for 100+ users.
+   Optimized PostgreSQL schema improving query performance by 38%.
+   Built RAG-based Python pipelines boosting LLM accuracy by 43%.
+   Stack: Python, PostgreSQL, RAG, FastAPI, Flutter.
+
+2. Research Assistant, UIUC CHI AI Infodemic Lab (Jan 2025 - May 2025, Champaign IL)
+   Built NLP pipelines cutting processing latency by 41%.
+   Deployed distributed inference using Hugging Face and Neo4j for misinformation detection.
+   Developed REST APIs with FastAPI across distributed systems.
+   Stack: NLP, Hugging Face, Neo4j, FastAPI, Kafka, AWS EKS, Docker.
+
+3. Technical Consultant, Business Intelligence Group (Aug 2025 - Dec 2025, Champaign IL)
+   Architected a microservices RAG system for healthcare payer document retrieval.
+   Built fault-tolerant ETL pipelines for large document datasets.
+   Improved system performance by 64% through optimized indexing.
+   Stack: RAG, ETL, FastAPI, PostgreSQL, pgVector, Vector Embeddings.
+
+4. Data Analyst, Swift Mobil Software Solutions (Jul 2023 - Dec 2023, Mumbai India)
+   Built Power BI dashboards for logistics KPIs, reducing reporting time by 40%.
+   Processed large datasets using PySpark to identify failure patterns.
+   Developed SQL and graph queries speeding issue resolution by 26%.
+   Stack: Power BI, PySpark, Python, SQL, Neo4j, AWS S3.
+
+5. Data Scientist, PScope Technologies (Jan 2023 - Jun 2023, Mumbai India)
+   Deployed ML models and statistical solutions for enterprise clients.
+   Performed EDA and statistical validation, improving data accuracy by 30%.
+   Stack: Power BI, SQL, DAX, VBA, Excel, Jira.""",
+
     # ── PERSONAL BIO ──────────────────────────────────────────────────────────
     """Malhar Gudekar is a Data Engineer and AI/ML Engineer based in the USA.
 He builds production-grade data pipelines and intelligent AI systems — from raw
@@ -226,19 +258,4 @@ drives and rural outreach camps directly impacting 1,000+ individuals.""",
 
     # ── CONTACT ───────────────────────────────────────────────────────────────
     """Malhar Gudekar contact information and links:
-Email: gudekar2@illinois.edu
-LinkedIn: https://linkedin.com/in/malhar-gudekar
-GitHub: https://github.com/malhar-123
-Kaggle: https://www.kaggle.com/malharravigudekar
-He is actively seeking full-time roles in Data Engineering, ML Engineering,
-or Analytics Engineering.""",
-]
-
-# Unique IDs for ChromaDB
-IDS = [f"doc_{i}" for i in range(len(DOCUMENTS))
-
-    # ── AUTO-GENERATED RESUME DOCUMENTS ─────────────────────────────────────────
-
-     
-
-]
+Email: gudekar2
